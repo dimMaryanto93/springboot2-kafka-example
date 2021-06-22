@@ -1,0 +1,20 @@
+POST {{host}}:{{port}}{{context-path}}/api/kafka/send/notification
+Content-Type: application/json
+
+{
+  "message": "Selamat pembayaran anda telah di setujui!!"
+}
+
+### send notification to apache kafka
+
+POST {{host}}:{{port}}{{context-path}}/api/kafka/send/payment
+Content-Type: application/json
+
+{
+"transactionId": "001",
+  "stan": "000001",
+  "cardNumber": "326412341234",
+  "amount": "10000"
+}
+
+### send payment request to apache kafka

@@ -3,3 +3,10 @@ spring:
     bootstrap-servers: ${KAFKA_BOOTSTRAP_SERVER:localhost:9092}
     consumer:
       group-id: "spring-consumer-group"
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
+      properties:
+        spring.json:
+          type.mapping: payment:com.maryanto.dimas.example.model.Payment,notif:com.maryanto.dimas.example.model.Notification
+    producer:
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
