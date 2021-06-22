@@ -14,6 +14,26 @@ up -d
 
 ## Connection to kafka
 
+How to create topic
+
+```bash
+docker-compose -f .docker/kafka.docker-compose.yaml \
+--env-file .docker/.env \
+-p <your-project-name> \
+exec kafka \
+kafka-topics --create --zookeeper localhost:2181 --replication-factor 1 --partition 1 --topic <your-topic>
+```
+
+How to describe topic into your cluster
+
+```bash
+docker-compose -f .docker/kafka.docker-compose.yaml \
+--env-file .docker/.env \
+-p <your-project-name> \
+exec kafka \
+kafka-topics --describe --zookeeper localhost:2181 --topic <your-topic>
+```
+
 How to consume message
 
 ```bash
