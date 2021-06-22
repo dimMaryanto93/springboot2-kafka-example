@@ -14,6 +14,16 @@ up -d
 
 ## Connection to kafka
 
+How to view list of topics
+
+```bash
+docker-compose -f .docker/kafka.docker-compose.yaml \
+--env-file .docker/.env \
+-p <your-project-name> \
+exec kafka \
+kafka-topics --list --zookeeper zookeeper:2181
+```
+
 How to create topic
 
 ```bash
@@ -21,7 +31,7 @@ docker-compose -f .docker/kafka.docker-compose.yaml \
 --env-file .docker/.env \
 -p <your-project-name> \
 exec kafka \
-kafka-topics --create --zookeeper localhost:2181 --replication-factor 1 --partition 1 --topic <your-topic>
+kafka-topics --create --zookeeper zookeeper:2181 --replication-factor 1 --partition 1 --topic <your-topic>
 ```
 
 How to describe topic into your cluster
