@@ -151,4 +151,4 @@ local.properties
 
 ## JMeter project
 .jmeter/*
-!.jmeter/test-plan.jmx
+!.jmeter/*.jmx
