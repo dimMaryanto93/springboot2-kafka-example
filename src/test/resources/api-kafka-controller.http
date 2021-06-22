@@ -11,7 +11,7 @@ POST {{host}}:{{port}}{{context-path}}/api/kafka/send/payment
 Content-Type: application/json
 
 {
-"transactionId": "001",
+  "transactionId": "001",
   "stan": "000001",
   "cardNumber": "326412341234",
   "amount": "10000"

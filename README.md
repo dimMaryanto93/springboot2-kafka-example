@@ -63,3 +63,17 @@ docker-compose -f .docker/kafka.docker-compose.yaml \
 exec kafka \
 kafka-console-producer --bootstrap-server --topic <your-topic>
 ```
+
+## Running service
+
+How to running springboot apps
+
+```bash
+mvn clean spring-boot:run
+```
+
+how to run testing-performance
+
+```
+jmeter -n -t .jmeter/test-plan.jmx -l html/result.jlt -e -o html
+```
